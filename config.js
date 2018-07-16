@@ -1,5 +1,5 @@
 module.exports = {
-  dev_uri: __dirname + '/development',
+  dev_uri: '/Users/philipp/Documents/LocalWebServer/wordpress/wp-content/themes',
   dist_uri: __dirname + '/dist',
   folder_name: 'theme'
 }
