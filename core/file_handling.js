@@ -2,6 +2,7 @@
 
 const fs = require('fs'),
   config = require('../config'),
+  widgetHandling = require('./widget_handling'),
   special_async = require('async'),
   exec = require('child_process').exec;
 
@@ -43,6 +44,7 @@ function writeObjectToPath(obj, path) {
         });
       })
       special_async.parallel(executeArray, function () {
+        widgetHandling.copyWidgets(path);
         resolve('written')
       });
     });

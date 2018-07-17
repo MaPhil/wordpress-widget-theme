@@ -2,11 +2,10 @@
 
 
 <?php
-
-echo $post->ID;
-dynamic_sidebar("Head of the Page ({$post->ID})");
-dynamic_sidebar("Body of the Page ({$post->ID})");
-dynamic_sidebar("Foot of the Page ({$post->ID})");
+echo $post->ID . "   " . $post->post_title;
+dynamic_sidebar("head{$post->ID}");
+dynamic_sidebar("body{$post->ID}");
+dynamic_sidebar("foot{$post->ID}");
 ?>
 
 
