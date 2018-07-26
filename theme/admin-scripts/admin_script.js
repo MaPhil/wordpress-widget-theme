@@ -4,6 +4,7 @@
 
 		$('body').on('click', 'button.media-upload-btn', function (event){
 			var etID = event.target.id;
+			console.log(etID);
 			event.preventDefault();
 			var imageUploader =  new wp.media.view.MediaFrame.Select({
 				'title':'Select Media',
@@ -13,8 +14,8 @@
 
 			imageUploader.on("select",function(){
 				var image = imageUploader.state().get('selection').toJSON();
-				console.log(image);
-				$('#'+etID+'+input').val(image[0].url)
+				$('#'+etID+'+input').val(image[0].url).trigger('change');
+				$('#display-'+etID).css('background-image','url("'+image[0].url+'")');
 			});
 		});
 	});
