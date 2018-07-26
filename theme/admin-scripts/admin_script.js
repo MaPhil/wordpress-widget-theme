@@ -3,7 +3,7 @@
 	$(document).ready(function(){
 
 		$('body').on('click', 'button.media-upload-btn', function (event){
-			console.log('test');
+			var etID = event.target.id;
 			event.preventDefault();
 			var imageUploader =  new wp.media.view.MediaFrame.Select({
 				'title':'Select Media',
@@ -14,6 +14,7 @@
 			imageUploader.on("select",function(){
 				var image = imageUploader.state().get('selection').toJSON();
 				console.log(image);
+				$('#'+etID+'+input').val(image[0].url)
 			});
 		});
 	});
