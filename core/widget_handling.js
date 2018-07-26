@@ -9,9 +9,10 @@ const fs = require('fs'),
 
 
 async function copyWidgetClass(path) {
-  await exec(`mkdir -p ${path}/${config.folder_name}/widgets`);
   for(let i=0;i<theme.widgets.length;i++){
-    await exec(`cp -r ${__dirname}/../widgets/${theme.widgets[i]}/widget.php ${path}/${config.folder_name}/widgets/${theme.widgets[i]}.php`);
+  await exec(`mkdir -p ${path}/${config.folder_name}/widgets/${theme.widgets[i]}`);
+    await exec(`cp ${__dirname}/../widgets/${theme.widgets[i]}/widget.php ${path}/${config.folder_name}/widgets/${theme.widgets[i]}/widget.php`);
+    await exec(`cp -r ${__dirname}/../widgets/${theme.widgets[i]}/assets ${path}/${config.folder_name}/widgets/${theme.widgets[i]}/assets`);
   }
 }
 function addToFunctions(functions,widgets,pulling) {
@@ -34,7 +35,7 @@ module.exports = {
     for(let i=0;i<theme.widgets.length;i++){
 
       temp_register+=`register_widget( 'wp_wt_${theme.widgets[i].replace(/-/g,'_')}' );\n`;
-      temp_pull+=`require_once( get_template_directory() . '/widgets/${theme.widgets[i]}.php' );\n`;
+      temp_pull+=`require_once( get_template_directory() . '/widgets/${theme.widgets[i]}/widget.php' );\n`;
     }
     
     return addToFunctions(functions,temp_register,temp_pull);
