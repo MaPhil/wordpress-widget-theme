@@ -23,7 +23,6 @@ function widget_theme_script_enqueue(){
 }
 add_action('wp_enqueue_scripts','widget_theme_script_enqueue');
 
-
 //admin panel custom script
 function widget_theme_admin_script_enqueue(){
   wp_enqueue_media();
