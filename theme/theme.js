@@ -4,5 +4,6 @@ module.exports = {
   author: 'Philipp Mainz',
   description: 'some description',
   version: '0.1 alpha',
-  widgets: []
-}
+  widgets: ['test1','Foo_Widget']
+} 
+  

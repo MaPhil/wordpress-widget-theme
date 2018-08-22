@@ -1,6 +1,6 @@
 <?php 
 
-function widget_theme_script_enqueue(){
+function widget_theme_script_enqueue(){ 
 
   $css_to_include = array(
     "theme"=>get_template_directory_uri() ."/css/theme_style.css",
@@ -27,7 +27,13 @@ add_action('wp_enqueue_scripts','widget_theme_script_enqueue');
 function widget_theme_admin_script_enqueue(){
   wp_enqueue_media();
   wp_register_script('admin_custom_script', get_theme_file_uri() . "/admin-scripts/admin_script.js",array('jquery'));
+  wp_register_script('jquery-ui',  get_theme_file_uri() . "jquery-ui.min.js",array('jquery'));
+  wp_register_script('admin_tiny_mce',  "https://cloud.tinymce.com/stable/tinymce.min.js",array('jquery'));
+  wp_register_script('admin_tiny_mce_jquery',  "https://cloud.tinymce.com/stable/jquery.tinymce.min.js",array('jquery'));
+  wp_enqueue_script('admin_tiny_mce');
+  wp_enqueue_script('admin_tiny_mce_jquery');
   wp_enqueue_script('admin_custom_script');
+  wp_enqueue_script('admin_tiny_mce');
 }
 add_action('admin_enqueue_scripts','widget_theme_admin_script_enqueue');
 
