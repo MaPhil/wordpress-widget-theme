@@ -18,7 +18,7 @@ After you have installed everything you need to set environment path in the **co
       folder_name: 'theme'
     }
 
-
+Before you start to write your widgets you will need to create a **widgets** folder to put all the widgets.
 ## Write your widgets
 
 You can either write your widget by hand or you can use the boilerplate system that reduces the word to only html, js and css. You can find this system [here](https://github.com/MaPhil/wordpress-widget-boilerplate).
