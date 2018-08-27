@@ -27,3 +27,6 @@ You can either write your widget by hand or you can use the boilerplate system t
 
 To really get a good looking and reusable theme you will need to change the php files. This system will only provide you with a very basic design but you can change quit a bit by only using the **style.css** or the **theme.js** file
 
+
+----
+image used as the screenshot is from freepik https://www.freepik.com/free-vector/great-isometric-user-experience_851898.htm#term=website&page=1&position=31
